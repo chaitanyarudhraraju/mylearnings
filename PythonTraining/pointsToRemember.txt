@@ -1,0 +1,55 @@
+import re
+
+#dir() -----> will list all names in datastructure
+    ex: dir(re)
+
+help(re) ----> help for module
+
+re.__doc__ -> documentation of module
+
+help(module.Rectangle) -> only specific info of Rectangle
+help(module) ---> full help of module
+
+import os
+os.system() ---> will start an application and send o/p to console
+ex:
+import os
+os.system('ls -l')
+#.... on console
+os.popen() ----> will start an application and send to calling application
+fin=os.popen('ls -l')
+stores 'ls -l' o/p to fin as lines
+fin.readlines()
+
+
+os.execvp()----> Submit a job and erase all instructions after execvp
+ex:
+rudhrara@c3-charud-vm01:~/PythonTraining$ cat execvp.py
+import os
+
+print "Hello"
+os.execvp('ls',['ls','-l'])
+print "Done"  ####Done wont be printed as execvp will erase all instructions after execvp
+
+
+o/p:
+rudhrara@c3-charud-vm01:~/PythonTraining$ python execvp.py
+Hello
+total 16
+-rw-r--r-- 1 rudhrara eng  66 Oct 10 21:15 execvp.py
+-rwxr-xr-x 1 rudhrara eng 157 Oct 10 21:06 osModule.py
+
+
+os.fork() -----------> to create a child process (spawning)
+
+
+Reference:
+talk: +91 8861636418
+
+write: thebenchmates@gmail.com
+wedb: benchmates.com
+
+books:
+Learning Python: -----Mark Lutz (Basic)
+Programming Python ---- Mark Lutz (Advanced)
+webdoc: www.docs.python.org
