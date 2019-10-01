@@ -1,0 +1,61 @@
+Git commands:
+	git clone -b DartDev git@repomaster.3pardata.com:IDART.git <folder_name>
+	git status    ---> Check which files are modified
+	git  branch ---> which branch 
+	git pull ---> Pull latest modified scripts to branch
+	git  commit  -a ----> Which script to commit 
+	git push origin <branch_name> ---> push code to branch 
+	git stash ------> Will save ur changes to branch if user wants to checkout to different branch and reapply changes using 
+	git stash list ---------> list all scripts
+	git stash show -----------> how many stash's applied
+		git stash list 
+		stash@{0}: WIP on master: 049d078 added the index file 
+		stash@{1}: WIP on master: c264051 Revert "added file_size" 
+		stash@{2}: WIP on master: 21d80a5 added number to log
+	 
+	git stash apply ----------> for last stashed 
+	git stash apply stash@{2} --------> Whichever changes to apply back
+	git diff -----------> Show file changes
+	git log --stat ---------------> show commit messages of a user including modified file names
+	git  checkout <file_name> : Discard changes to modified file in working directory 
+	git reset HEAD^ --soft (Save your changes, back to last commit)
+	git reset HEAD^ --hard (Discard changes, back to last commit)
+	
+	git reset --hard origin/master --->discard your commits to branch 
+	
+	From <https://stackoverflow.com/questions/10169328/git-your-branch-is-ahead-of-origin-master-by-1-commit> 
+	git reset --soft HEAD~ # reset to the last commit
+	git stash              # stash all the changes in the working tree 
+	git push               # push changes 
+	git stash pop          # get your changes back 
+	git show <commit_id>
+	
+	From <https://git-scm.com/book/en/v1/Git-Tools-Stashing> 
+	
+	
+	Discard local changes for a specific file
+	using git checkout filename
+	
+	git clone -b branch --single-branch git://github/repository.git
+	
+	From <https://stackoverflow.com/questions/4811434/clone-only-one-branch> 
+	
+	
+	Convert git repository to bare one
+	 
+	cd repomv .git ../repo.git # renaming just for claritycd ..rm -fr repocd repo.gitgit config --bool core.bare true
+	
+	From <https://stackoverflow.com/questions/2199897/how-to-convert-a-normal-git-repository-to-a-bare-one> 
+	
+	
+	Windows git authentication :
+	===========================
+	Generate ssh key :
+	ssh-keygen -t rsa -b 4096 -C <github_mail_addres>
+		Ex:ssh-keygen -t rsa -b 4096 -C chaithanya.varma2011@gmail.com
+	Add the key under te.pub under github ssh keys
+		Github -> settings-> SSH &GPA keys -> New SSH key(Right side)
+	ssh_add ../Rsa_key/te
+		../Rsa_key/te: Key location
+	eval $(ssh-agent -s)
+	git ls-remote
